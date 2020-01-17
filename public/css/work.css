@@ -124,6 +124,7 @@
         display: block;
         position: absolute;
         height: 300px;
+        width: 300px;
          margin: 0 auto;
          top: 10px;
          opacity: 1;
@@ -133,7 +134,6 @@
 #logo-canvas{
     position: relative;
     max-width: 300px;
-    left: 25px;
 }
 
 #row{
@@ -142,12 +142,12 @@
     height: 600px;
 }
 .row-product{
-    width: 25%;
+    width: 300px;
     text-align: center;
 }
 #proizvod{
     margin-top: 10px;
-    width: 25%;
+    width: 300px;
     position: relative;
     min-height: 300px;
     padding-top: 10px;
