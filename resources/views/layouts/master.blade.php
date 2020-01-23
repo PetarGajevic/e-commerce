@@ -12,8 +12,8 @@
         <script src="/js/fabric.min.js"></script>
         <script src="/js/jquery.min.js"></script>
         <script src="/js/html2canvas.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-      
+      {{--   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+       --}}
         <script src='/js/spectrum.js'></script>
             <link rel='stylesheet' href='/css/spectrum.css' />
             <script src="/js/work.js"></script>

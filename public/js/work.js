@@ -62,6 +62,29 @@ $(document).ready(function(){
             $('#enabled-product2').html('Disabled');
         }
     });
+    
+      // Enable and edit Hoodie
+      $('#edit-product3').click(function() {
+        if(document.getElementById('product6').style.display == 'none'){
+            closeCanvas();
+            document.getElementById('product6').style.display = 'flex';
+        }else{
+            document.getElementById('product6').style.display = 'none';
+        }
+    });
+    $('#enabled-product3').click(function(){
+        if($('#proizvod3').hasClass('disabledbutton')){
+            $('#proizvod3').removeClass('disabledbutton');
+            $( "#proizvod3" ).attr( "value" , 0 );
+            $('#enabled-product3').html('Enabled');
+        }else{
+            $('#proizvod3').addClass('disabledbutton');
+            $( "#proizvod3" ).attr( "value" , 1 );
+            $('#enabled-product3').html('Disabled');
+        }
+    });
+
+
     // Close other canvas edit options
     function closeCanvas(){
         var els = document.getElementsByClassName("img-div");
@@ -81,15 +104,16 @@ $(document).ready(function(){
         var image1 = document.getElementById("logo-canvas1");
         image1.src = canvas4.toDataURL();
     });
-
+     // canvas on change show mugs product
     $('#product5').mouseup(function(){
         var image2 = document.getElementById("logo-canvas2");
         image2.src = canvas5.toDataURL();
     });
-
-    /* $('.color-choose input').on('click', function(){
-        var phonecase = $(this).attr('data-image');
-    }); */
+     // canvas on change show hoodie product
+     $('#product6').mouseup(function(){
+        var image4 = document.getElementById("logo-canvas3");
+        image4.src = canvas6.toDataURL();
+    });
 
     // Change phone case color
     var colorInput = document.querySelector('#color');
@@ -106,7 +130,11 @@ $(document).ready(function(){
     colorInput2.addEventListener('input', ()=>{
       $('.background-div2').css("background-color", colorInput2.value);
     });
-
+    // Change Hoodie color
+    var colorInput3 = document.querySelector('#color3');
+    colorInput3.addEventListener('input', ()=>{
+      $('.background-div3').css("background-color", colorInput3.value);
+    });
     
     
 
