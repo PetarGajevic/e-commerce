@@ -36,11 +36,66 @@
     </div>
 </div>
 
+
+</div>
+
+{{-- T-shirt html --}}
+<div class="product-column">
+    <div class="row-product">
+        <div id="proizvod1" class="save-picture disabledbutton" value="1">
+            <div class="background-div1">
+        <img id="logo-canvas1" src="/image/<?php if(!empty($image)){echo $image;} ?>">
+        <img class="overlay-panel" src="/images/t-shirt.png">
+            </div>
+        </div>
+    <div class="preview-info">
+        <span class="preview-name">
+            T-Shirt
+        </span>
+        <div>
+        <button id="edit-product1">Edit</button>
+        <button id="enabled-product1" onclick="">Disabled</button>
+        </div>
+    </div>
+</div>
+ 
+    </div>
+  
+
+    {{-- Mugs html --}}
+    <div class="product-column">
+        <div class="row-product">
+            <div id="proizvod2" class="save-picture disabledbutton" value="1">
+                <div class="background-div2">
+            <img id="logo-canvas2" src="/image/<?php if(!empty($image)){echo $image;} ?>">
+            <img class="overlay-panel" src="/images/mugs.png">
+                </div>
+            </div>
+        <div class="preview-info">
+            <span class="preview-name">
+                Mug
+            </span>
+            <div>
+            <button id="edit-product2">Edit</button>
+            <button id="enabled-product2" onclick="">Disabled</button>
+            </div>
+        </div>
+    </div>
+      
+        </div>
+       
+    </div>
+
+
+
+        {{-- Canvas edit for Phone Case --}}
 <div id="product3" class="img-div" data-value="1" style="display:none">
+    
     <div id="app3" >
         <canvas id="c3" width="200" height="300"></canvas>
     </div>
     <div class="product-options">
+        <p>PhoneCase options</p>
         <div class="color-choose">
         
             <div class="container">
@@ -64,31 +119,22 @@
         </div>
     </div>
     </div>
-</div>
-{{-- T-shirt html --}}
-<div class="product-column">
-    <div class="row-product">
-        <div id="proizvod1" class="save-picture disabledbutton" value="1">
-            <div class="background-div1">
-        <img id="logo-canvas1" src="/image/<?php if(!empty($image)){echo $image;} ?>">
-        <img class="overlay-panel" src="/images/t-shirt.png">
-            </div>
-        </div>
-    <div class="preview-info">
-        <span class="preview-name">
-            T-Shirt
-        </span>
-        <div>
-        <button id="edit-product1">Edit</button>
-        <button id="enabled-product1" onclick="">Disabled</button>
-        </div>
-    </div>
-</div>
+
+
+
+
+
+
+
+
+
+              {{-- Canvas edit for T-shirt --}}
     <div id="product4" class="img-div" data-value="1" style="display:none">
         <div id="app4" >
             <canvas id="c4" width="200" height="300"></canvas>
         </div>
         <div class="product-options1">
+            <p>T-shirt options</p>
             <div class="color-choose">
             
                 <div class="container">
@@ -108,32 +154,17 @@
             </div>
         </div>
     </div>
-    </div>
 
-    {{-- Mugs html --}}
-    <div class="product-column">
-        <div class="row-product">
-            <div id="proizvod2" class="save-picture disabledbutton" value="1">
-                <div class="background-div2">
-            <img id="logo-canvas2" src="/image/<?php if(!empty($image)){echo $image;} ?>">
-            <img class="overlay-panel" src="/images/mugs.png">
-                </div>
-            </div>
-        <div class="preview-info">
-            <span class="preview-name">
-                T-Shirt
-            </span>
-            <div>
-            <button id="edit-product2">Edit</button>
-            <button id="enabled-product2" onclick="">Disabled</button>
-            </div>
-        </div>
-    </div>
-        <div id="product5" class="img-div" data-value="1" style="display:none">
+
+
+
+         {{-- Canvas edit for Mugs --}}
+         <div id="product5" class="img-div" data-value="1" style="display:none">
             <div id="app5" >
                 <canvas id="c5" width="200" height="300"></canvas>
             </div>
             <div class="product-options2">
+                <p>Mug options</p>
                 <div class="color-choose">
                 
                     <div class="container">
@@ -157,7 +188,6 @@
                 </div>
             </div>
         </div>
-        </div>
 
 
         {{-- Hoodie html --}}
@@ -171,7 +201,7 @@
               </div>
           <div class="preview-info">
               <span class="preview-name">
-                  T-Shirt
+                  Hoodie
               </span>
               <div>
               <button id="edit-product3">Edit</button>
@@ -179,35 +209,36 @@
               </div>
           </div>
       </div>
+ 
+          </div>
           <div id="product6" class="img-div" data-value="1" style="display:none">
-              <div id="app6" >
-                  <canvas id="c6" width="200" height="300"></canvas>
-              </div>
-              <div class="product-options3">
-                  <div class="color-choose">
-                  
-                      <div class="container">
-                          <div class="output" id="output"></div>
-                      
-                          <div class="result-wrp">
-                             <p>Choose a color</p> 
-                            <input type="color" id="color3">
-                          </div>
-                          <label>
-                              <span>Scale:</span> 
-                              <input type="range" id="scale-control3"  value="0.05" min="0.01" max="0.5" step="0.005">
-                          </label>
-                          <button id="alignVertically3">Vertically</button>
-                          <button id="alignHorizontally3">Horizontally</button>
+            <div id="app6" >
+                <canvas id="c6" width="200" height="300"></canvas>
+            </div>
+            <div class="product-options3">
+                <p>Hoodie options</p>
+                <div class="color-choose">
+                
+                    <div class="container">
+                        <div class="output" id="output"></div>
+                    
+                        <div class="result-wrp">
+                           <p>Choose a color</p> 
+                          <input type="color" id="color3">
                         </div>
-                  </div>
-              </div>
-          </div>
-          </div>
+                        <label>
+                            <span>Scale:</span> 
+                            <input type="range" id="scale-control3"  value="0.05" min="0.01" max="0.5" step="0.005">
+                        </label>
+                        <button id="alignVertically3">Vertically</button>
+                        <button id="alignHorizontally3">Horizontally</button>
+                      </div>
+                </div>
+            </div>
+        </div>
 
 
 
-</div>
     </div>
     <div class="save-work">
         <button id="capture" onclick="doCapture();">Sacuvaj</button>
