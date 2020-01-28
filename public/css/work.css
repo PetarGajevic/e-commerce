@@ -172,16 +172,19 @@
 #logo-canvas{
     position: relative;
     max-width: 300px;
+    max-height: 300px;
 }
 
 #logo-canvas1{
     position: relative;
     max-width: 300px;
+    max-height: 300px;
 }
 
 #logo-canvas2{
     position: relative;
     max-width: 300px;
+    max-height: 300px;
 }
 #logo-canvas3{
     position: relative;
@@ -192,18 +195,18 @@
     border: 1px black solid;
 }
 
-#product-options{
+.product-options{
     z-index: 1;
 }
 
-#product-options1{
+.product-options1{
     z-index: 1;
 }
 
-#product-options2{
+.product-options2{
     z-index: 1;
 }
-#product-options3{
+.product-options3{
     z-index: 1;
 }
 

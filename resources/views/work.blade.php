@@ -5,12 +5,13 @@
         <label>Select image to upload:</label>
         <input type="file" name="file" id="file">
         <input type="submit" value="Upload" name="submit">
+        <span>{{ $errors->first('file')}}</span>
        
     </form>
 
     
   
-    
+    <canvas id="c" width="200" height="300"></canvas>
 
     <div class="row">
       {{-- Phone case html --}}
@@ -34,6 +35,7 @@
         </div>
     </div>
 </div>
+
 <div id="product3" class="img-div" data-value="1" style="display:none">
     <div id="app3" >
         <canvas id="c3" width="200" height="300"></canvas>
@@ -50,7 +52,7 @@
                 </div>
                 <label>
                     <span>Scale:</span> 
-                    <input type="range" id="scale-control"  value="0.05" min="0.01" max="0.5" step="0.05">
+                    <input type="range" id="scale-control"  value="0.05" min="0.01" max="0.5" step="0.005">
                 </label>
                 <button id="alignVertically">Vertically</button>
                 <button id="alignHorizontally">Horizontally</button>
@@ -98,7 +100,7 @@
                     </div>
                     <label>
                         <span>Scale:</span> 
-                        <input type="range" id="scale-control1"  value="0.05" min="0.01" max="0.5" step="0.05">
+                        <input type="range" id="scale-control1"  value="0.05" min="0.01" max="0.5" step="0.005">
                     </label>
                     <button id="alignVertically1">Vertically</button>
                     <button id="alignHorizontally1">Horizontally</button>
@@ -143,7 +145,7 @@
                         </div>
                         <label>
                             <span>Scale:</span> 
-                            <input type="range" id="scale-control2"  value="0.05" min="0.01" max="0.5" step="0.05">
+                            <input type="range" id="scale-control2"  value="0.05" min="0.01" max="0.5" step="0.005">
                         </label>
                         <button id="alignVertically2">Vertically</button>
                         <button id="alignHorizontally2">Horizontally</button>
@@ -193,7 +195,7 @@
                           </div>
                           <label>
                               <span>Scale:</span> 
-                              <input type="range" id="scale-control3"  value="0.05" min="0.01" max="0.5" step="0.05">
+                              <input type="range" id="scale-control3"  value="0.05" min="0.01" max="0.5" step="0.005">
                           </label>
                           <button id="alignVertically3">Vertically</button>
                           <button id="alignHorizontally3">Horizontally</button>
@@ -215,12 +217,15 @@
 `
 
 
-         
+ 
  
 <script>
 var canvas = new fabric.Canvas('c');
 var imgElement = document.getElementById('myImage');
 
+ var extension = "<?php if(!empty($ext)){echo $ext;} ?>";
+    console.log(extension);
+    if( extension !="svg"){
  fabric.Image.fromURL("/image/<?php if(!empty($image)){echo $image;} ?>"  , function(img) {
     img.set({
     
@@ -228,7 +233,14 @@ var imgElement = document.getElementById('myImage');
     img.scaleToHeight(200);
     img.scaleToWidth(200);
     canvas.add(img);
+}); 
+    }else{
+fabric.loadSVGFromURL("/image/<?php if(!empty($image)){echo $image;} ?>", function(img, options) {
+  var img = fabric.util.groupSVGElements(img, options);
+  img.scaleToWidth(250);
+  canvas.add(img).renderAll();
 });
+}
 var canvas1 = new fabric.Canvas('c1');
 var imgElement = document.getElementById('myImage');
  fabric.Image.fromURL("/image/<?php if(!empty($image)){echo $image;}  ?>", function(img) {
@@ -264,7 +276,8 @@ var imgElement = document.getElementById('myImage');
     img.set({
     
     });
-    img.scaleToWidth(200);
+    img.scaleToWidth(250);
+    
     canvas3.add(img);
 
      // Repeat option for Phone case
@@ -344,6 +357,9 @@ var imgElement = document.getElementById('myImage');
 })
   });
 });
+
+  
+    
 </script>
 
 <script>
@@ -354,8 +370,7 @@ var canvas4 = new fabric.Canvas('c4');
     
     });
     
-    img.scaleToHeight(200);
-    img.scaleToWidth(200);
+    img.scaleToWidth(250);
     canvas4.add(img);
     var image2 = document.getElementById("logo-canvas1");
 
@@ -394,8 +409,7 @@ var canvas5 = new fabric.Canvas('c5');
     
     });
     
-    img.scaleToHeight(200);
-    img.scaleToWidth(200);
+    img.scaleToWidth(250);
     canvas5.add(img);
     var image3 = document.getElementById("logo-canvas2");
     // None option for Mugs
@@ -473,8 +487,8 @@ var canvas6 = new fabric.Canvas('c6');
     
     });
     
-    img.scaleToHeight(200);
-    img.scaleToWidth(200);
+   
+    img.scaleToWidth(250);
     canvas6.add(img);
     var image4 = document.getElementById("logo-canvas3");
 
