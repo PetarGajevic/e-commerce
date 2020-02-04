@@ -2,12 +2,12 @@
 
 <?php 
 $image = $_POST['image'];
+
 $image = explode(";" , $image)[1];
 $image = explode("," , $image)[1];
 $image = str_replace(" ", "+", $image);
 
 $image = base64_decode($image);
-
 
 $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 $name = mt_rand(1000000, 9999999)

@@ -17,8 +17,7 @@ Route::get('/', function () {
 
 Route::get('work', 'ImageController@index');
 Route::post('work', 'ImageController@upload');
-Route::get('resizeImage', 'ImageController@resizeImage');
-Route::post('resizeImagePost', 'ImageController@resizeImagePost')->name('resizeImagePost');
+
 
 Route::post('/savework', function () {
     return view('savework');
